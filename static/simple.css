@@ -1,0 +1,15 @@
+.footer{
+    /*clear: both;*/
+    position:fixed;
+   /*margin-top: -40px;*/
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+   width:100%;
+   height:60px;   /* Height of the footer */
+   background-color:#BDBDBD;
+}
+body{
+    margin-bottom: 50px;
+}
