@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from services.api import API_Stock as api
 
 
 app = Flask(__name__)
@@ -13,7 +14,10 @@ def hello_world():
 @app.route('/handle_data', methods=['GET'])
 def handle_data():
     selected = request.args.get('stockList')
-    return (str(selected))
+    symbolStock = selected + '.JKT'
+    api.getByStockSymbolDaily(symbolStock)
+#     return halaman yang menampilkan data grafik, tabel, result.html
+    return
 
 @app.route('/about')
 def aboutPage():
