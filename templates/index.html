@@ -12,6 +12,9 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
+{#        untuk plot.ly cdn#}
+    <script src="https://cdn.plot.ly/plotly-basic-latest.min.js"></script>
+
    <link rel="stylesheet" type="text/css" href="/static/simple.css">
       <style>
 
@@ -65,7 +68,7 @@
          {% block content %}
          <div class="container-fluid">
             <h3>Skripsi Project</h3>
-            <strong>Aplikasi web untuk memprediksi harga saham dengan menggunakan metode Local Linear Wavelet Neural Network</strong>
+            <strong>Aplikasi web untuk memprediksi harga saham dengan menggunakan metode K-Nearest Neighbors</strong>
          </div>
          <div class="container">
             <div class="row">
@@ -103,15 +106,9 @@
         <script>
          $(function () {
              var lq45List = [
+                 {#sektor property#}
                  {#Agustus 2018 - Januari 2019#}
-                 "ADHI","ADRO", "AKRA", "ANTM", "ASII",
-                 "BBCA", "BBNI", "BBRI", "BBTN", "BJBR", "BKSL",
-                 "BMRI", "BRPT", "BSDE", "ELSA", "EXCL", "GGRM",
-                 "HMSP", "ICBP", "INCO", "INDF", "INDY", "INKP",
-                 "INTP", "ITMG", "JSMR", "KLBF", "LPKR", "LPPF",
-                 "MEDC", "MNCN", "PGAS", "PTBA", "SCMA", "SMGR",
-                 "SRIL", "SSMS", "TLKM", "TPIA", "UNTR", "UNVR",
-                 "WIKA", "WSBP", "WSKT"
+                 "ADHI", "BKSL", "BSDE", "LPKR", "PTPP", "WIKA", "WSKT"
              ];
 
              $(lq45List).each(function (index, stock) {

@@ -1,5 +1,8 @@
 from flask import Flask, request, render_template
-from services.api import API_Stock as api
+from services.api import API_Stock
+import os
+import time
+from DateTime import DateTime
 
 
 app = Flask(__name__)
@@ -14,10 +17,11 @@ def hello_world():
 @app.route('/handle_data', methods=['GET'])
 def handle_data():
     selected = request.args.get('stockList')
-    symbolStock = selected + '.JKT'
-    api.getByStockSymbolDaily(symbolStock)
+    data = selected + '.JKT'
+    api = API_Stock()
+    data_graph, data_table = api.knn_stock_prediction(symbolStock = data)
 #     return halaman yang menampilkan data grafik, tabel, result.html
-    return
+    return render_template('result.html', selected, data_graph, data_table)
 
 @app.route('/about')
 def aboutPage():
