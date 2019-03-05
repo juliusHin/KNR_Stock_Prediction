@@ -1,0 +1,11 @@
+Metadata-Version: 1.1
+Name: apm
+Version: 0.0.1
+Summary: Ansible Playbook Manager CLI tool
+Home-page: https://github.com/elbuo8/apm
+Author: Yamil Asusta (elbuo8)
+Author-email: yamil.asusta@upr.edu
+License: MIT
+Download-URL: https://github.com/elbuo8/apm/tarball/master
+Description: Publish and download playbooks/roles from APM
+Platform: UNKNOWN

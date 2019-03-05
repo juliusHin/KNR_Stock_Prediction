@@ -6,11 +6,13 @@
 import copy
 import warnings
 from collections import defaultdict
+import platform
 
 import numpy as np
 from scipy import sparse
 from .externals import six
 from .utils.fixes import signature
+from .utils import _IS_32BIT
 from . import __version__
 
 
@@ -488,7 +490,7 @@ class OutlierMixin(object):
     _estimator_type = "outlier_detector"
 
     def fit_predict(self, X, y=None):
-        """Performs outlier detection on X.
+        """Performs fit on X and returns labels for X.
 
         Returns -1 for outliers and 1 for inliers.
 
@@ -515,7 +517,12 @@ class MetaEstimatorMixin(object):
     # this is just a tag for the moment
 
 
-###############################################################################
+class _UnstableArchMixin(object):
+    """Mark estimators that are non-determinstic on 32bit or PowerPC"""
+    def _more_tags(self):
+        return {'non_deterministic': (
+            _IS_32BIT or platform.machine().startswith(('ppc', 'powerpc')))}
+
 
 def is_classifier(estimator):
     """Returns True if the given estimator is (probably) a classifier.

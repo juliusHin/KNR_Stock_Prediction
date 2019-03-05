@@ -1,0 +1,21 @@
+Metadata-Version: 2.0
+Name: APMonitor
+Version: 0.34
+Summary: Python package to interface with the APMonitor optimization suite
+Home-page: https://github.com/APMonitor/apm_python
+Author: John Hedengren
+Author-email: john_hedengren@byu.edu
+License: UNKNOWN
+Description-Content-Type: UNKNOWN
+Keywords: DAE optimization MILP MINLP QP NLP MIDO IPOPT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+
+UNKNOWN
+
+

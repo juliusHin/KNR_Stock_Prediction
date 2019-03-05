@@ -1,5 +1,4 @@
-#!/home/juliustanuwijaya/JTSkripsiProject/venv/bin/python
-
+#!/home/julius_hin/JTSkripsiProject/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
