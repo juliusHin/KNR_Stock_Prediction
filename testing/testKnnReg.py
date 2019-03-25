@@ -7,11 +7,15 @@ import plotly
 import plotly.plotly as py
 import plotly.graph_objs as go
 import plotly.figure_factory as FF
+# from numpy.core.tests.test_mem_overlap import xrange
+# from scipy._lib.six import xrange
+from pandas import cut
 from scipy.optimize import curve_fit
 from sklearn import preprocessing, model_selection
 from sklearn.linear_model import LinearRegression
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
 
 # you can get apiKey from AlphaVantage.co
 from services.KEY import getApiKey
@@ -25,10 +29,14 @@ from sklearn import neighbors
 import matplotlib
 import matplotlib.pyplot as plt
 
+import math
+import operator
+
 # https://github.com/vishwajeetv/stock_prediction/blob/master/backend/predictorWeekly.py
 def normalize(df):
     normalizedValues = (df- df.mean())/df.std()
     return normalizedValues
+
 
 def readData():
     symbol = "ADHI.JKT"
@@ -92,6 +100,7 @@ def main():
 
     # pandas df, pd, dll
     df = pd.DataFrame(data_numpy_form, columns=['date','open','low', 'high', 'close'])
+    df = df[df['open'] > 0]
 
     # untuk bedain data 2016, 2017, 2018
     data_2016_actual = df[(df['date'] >= '2016-01-01') & (df['date'] <= '2016-12-31')]
@@ -110,15 +119,69 @@ def main():
     day_count = np.array(day).reshape(-1,1)
 
 
-    X_train, X_test, y_train, y_test = train_test_split(day_count, data_2016_actual['close'], train_size=0.67, shuffle=False)
+    # X_train, X_test, y_train, y_test = train_test_split(day_count, data_2016_actual['close'], train_size=0.75, shuffle=False)
+
+    # X_train = X_train.reshape(-1, 1)
+    # X_test = X_test.reshape(-1, 1)
+    # y_train = y_train.reshape(-1, 1)
+    # y_test = y_test.reshape(-1, 1)
+
+    cut_point = int(len(day) * 0.8)
+    X_train = day_count[:cut_point]
+    X_test = day_count[cut_point:]
+    y_train = data_2016_actual[:cut_point]['close']
+    y_test = data_2016_actual[cut_point:]['close']
+
+    knr = KNeighborsRegressor(n_neighbors=4, weights='distance', p=2, metric='euclidean')
+
+    X_train_new = np.array(X_train)
+    y_train_new = np.array(y_train)
+    X_test_new = np.array(X_test)
+    y_test_new = np.array(y_test)
+
+    print(X_train_new.dtype)
+    # print(y_train_new.shape(1))
+    # print(y_train_new.shape[1])
+
+    # predict_price = [i for i in range(len(X_test))]
+    predict_price= []
+    print(predict_price)
+    print(range(len(X_test)))
+    print(len(X_test))
+    type(X_test)
+
+    number_data_test = len(X_test_new)
+
+    for j in range (len(X_test_new)+1):
+        knr_price_fit= knr.fit(X_train_new, y_train_new)
+        knr_price_predict = knr_price_fit.predict(X_test_new)
+        knr_price_predict_mean = np.mean(knr_price_predict)
+        print(knr_price_predict_mean)
+
+        if predict_price == 1:
+            predict_price.extend(knr_price_predict_mean)
+        else:
+            predict_price.append(knr_price_predict_mean)
 
 
-    knr = KNeighborsRegressor(n_neighbors=4, weights='distance', metric='euclidean')
+        # if not predict_price: #kalau kosong
+        #     predict_price.append(knr_price_predict_mean)
+        # else:
+        #     predict_price.extend(knr_price_predict_mean)
 
-    knr_np= knr.fit(X_train, y_train)
-    knr_np_predict = knr_np.predict(X_test)
-    print(knr.score(X_train, y_train))
+        y_train_new = np.insert(y_train_new, [len(y_train_new+1)], knr_price_predict_mean,axis=0)
+        # X_train_new = X_train_new.__iadd__(len(X_train_new)+1)
+        X_train_new = np.insert(X_train_new, [len(X_train_new+1)], len(X_train_new+1), axis=0)
+        pass
 
+        # delete index pertama X_test_new
+        # number_data_test -= 1
+        # np.delete(X_test_new, [0])
+
+        # X_train_new = np.vstack((X_train_new,len(X_test_new)+1))
+        # del X_test_new[0]  #hapus index pertama
+
+    print(predict_price)
     trace_actual = go.Scatter(
         x = data_2016_actual['date'],
         y= data_2016_actual['close'],
@@ -128,7 +191,7 @@ def main():
     )
     trace_predict = go.Scatter(
         x =data_2016_actual['date'],
-        y= np.concatenate((y_train,knr_np_predict), axis=0),
+        y= list(y_train) + predict_price,
         name = "ADHI PREDICT",
         line=dict(color='#7F7F7F'),
         opacity=0.8
