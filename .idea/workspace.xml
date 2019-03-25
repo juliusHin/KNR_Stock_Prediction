@@ -2,203 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb7fcc17-27ce-4d3b-8837-53c2c5b5cbc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/services/KNR.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testing/testKNR.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testing/testKnRegressor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testing/testKnn3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing/testKnnReg.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/testKnnReg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scikit_learn-0.20.3.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scikit_learn-0.20.3.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scikit_learn-0.20.3.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scikit_learn-0.20.3.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scikit_learn-0.20.3.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy-1.2.1.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy-1.2.1.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy-1.2.1.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy-1.2.1.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy-1.2.1.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/.libs/libopenblasp-r0-382c8f3a.3.5.dev.so" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/_lib/_ccallback_c.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/_lib/_ccallback_c.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/cluster/_hierarchy.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/cluster/_hierarchy.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/cluster/_optimal_leaf_ordering.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/cluster/_optimal_leaf_ordering.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/cluster/_vq.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/cluster/_vq.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/integrate/_odepack.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/integrate/_odepack.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/integrate/_quadpack.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/integrate/_quadpack.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/integrate/_test_odeint_banded.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/integrate/_test_odeint_banded.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/integrate/lsoda.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/integrate/lsoda.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/integrate/vode.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/integrate/vode.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/interpolate/_bspl.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/interpolate/_bspl.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/interpolate/_fitpack.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/interpolate/_fitpack.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/interpolate/_ppoly.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/interpolate/_ppoly.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/interpolate/interpnd.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/interpolate/interpnd.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/interpolate/tests/test_bsplines.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/interpolate/tests/test_bsplines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/io/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/io/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/io/matlab/mio5_utils.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/io/matlab/mio5_utils.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_decomp_update.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_decomp_update.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_fblas.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_fblas.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_flapack.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_flapack.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_flinalg.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_flinalg.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_interpolative.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_interpolative.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_solve_toeplitz.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/_solve_toeplitz.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/cython_blas.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/cython_blas.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/cython_lapack.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/cython_lapack.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/tests/test_decomp_update.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/linalg/tests/test_decomp_update.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/ndimage/_cytest.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/ndimage/_cytest.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/ndimage/_ni_label.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/ndimage/_ni_label.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/odr/__odrpack.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/odr/__odrpack.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/_group_columns.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/_group_columns.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/_lbfgsb.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/_lbfgsb.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/_lsq/givens_elimination.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/_lsq/givens_elimination.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/_minpack.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/_minpack.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/_trlib/_trlib.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/_trlib/_trlib.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/tests/test_zeros.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/tests/test_zeros.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/zeros.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/optimize/zeros.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/signal/_max_len_seq_inner.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/signal/_max_len_seq_inner.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/signal/_peak_finding_utils.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/signal/_peak_finding_utils.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/signal/_upfirdn_apply.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/signal/_upfirdn_apply.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/signal/spline.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/signal/spline.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/_csparsetools.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/_csparsetools.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/csgraph/_min_spanning_tree.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/csgraph/_min_spanning_tree.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/csgraph/_reordering.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/csgraph/_reordering.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/csgraph/_shortest_path.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/csgraph/_shortest_path.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/csgraph/_tools.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/csgraph/_tools.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/linalg/dsolve/_superlu.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/linalg/dsolve/_superlu.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/linalg/isolve/_iterative.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/linalg/isolve/_iterative.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/linalg/isolve/tests/test_lgmres.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/sparse/linalg/isolve/tests/test_lgmres.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/spatial/_hausdorff.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/spatial/_hausdorff.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/spatial/_voronoi.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/spatial/_voronoi.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/spatial/ckdtree.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/spatial/ckdtree.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/spatial/qhull.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/spatial/qhull.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/special/_ellip_harm_2.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/special/_ellip_harm_2.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/special/_test_round.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/special/_test_round.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/special/_ufuncs.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/special/_ufuncs.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/special/cython_special.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/special/cython_special.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/_continuous_distns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/_stats.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/_stats.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/_stats_mstats_common.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/_stats_mstats_common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/kde.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/kde.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/tests/test_distributions.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/tests/test_distributions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/tests/test_kdeoth.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/stats/tests/test_kdeoth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/scipy/version.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/__check_build/_check_build.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/__check_build/_check_build.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/_isotonic.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/_isotonic.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/calibration.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/calibration.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/_dbscan_inner.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/_dbscan_inner.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/_hierarchical.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/_hierarchical.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/_k_means.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/_k_means.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/_k_means_elkan.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/_k_means_elkan.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/k_means_.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/k_means_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/tests/test_k_means.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/tests/test_k_means.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/tests/test_mean_shift.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cluster/tests/test_mean_shift.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/compose/_column_transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/compose/_column_transformer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/compose/_target.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/compose/_target.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/compose/tests/test_column_transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/compose/tests/test_column_transformer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/compose/tests/test_target.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/compose/tests/test_target.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/covariance/graph_lasso_.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/covariance/graph_lasso_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/covariance/tests/test_graphical_lasso.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/covariance/tests/test_graphical_lasso.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cross_decomposition/cca_.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/cross_decomposition/cca_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/_svmlight_format.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/_svmlight_format.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/openml.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/openml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/data/openml/1/api-v1-json-data-qualities-1.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/data/openml/1119/api-v1-json-data-qualities-1119.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/data/openml/2/api-v1-json-data-qualities-2.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/data/openml/3/api-v1-json-data-qualities-3.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/data/openml/40589/api-v1-json-data-qualities-40589.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/data/openml/40675/api-v1-json-data-qualities-40675.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/data/openml/40966/api-v1-json-data-qualities-40966.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/data/openml/561/api-v1-json-data-qualities-561.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/data/openml/61/api-v1-json-data-qualities-61.json.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/test_openml.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/test_openml.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/test_svmlight_format.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/tests/test_svmlight_format.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/twenty_newsgroups.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/datasets/twenty_newsgroups.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/decomposition/_online_lda.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/decomposition/_online_lda.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/decomposition/cdnmf_fast.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/decomposition/cdnmf_fast.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/decomposition/dict_learning.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/decomposition/dict_learning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/decomposition/fastica_.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/decomposition/fastica_.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/dummy.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/dummy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/ensemble/_gradient_boosting.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/ensemble/_gradient_boosting.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/ensemble/bagging.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/ensemble/bagging.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/ensemble/forest.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/ensemble/forest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/ensemble/voting_classifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/ensemble/voting_classifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/externals/_arff.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/externals/_arff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/feature_extraction/_hashing.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/feature_extraction/_hashing.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/feature_extraction/tests/test_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/feature_extraction/tests/test_text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/feature_extraction/text.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/feature_extraction/text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/impute.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/impute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/cd_fast.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/cd_fast.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/coordinate_descent.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/coordinate_descent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/sag_fast.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/sag_fast.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/sgd_fast.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/sgd_fast.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/stochastic_gradient.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/stochastic_gradient.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/tests/test_coordinate_descent.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/tests/test_coordinate_descent.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/tests/test_sgd.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/linear_model/tests/test_sgd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/manifold/_barnes_hut_tsne.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/manifold/_barnes_hut_tsne.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/manifold/_utils.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/manifold/_utils.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/manifold/locally_linear.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/manifold/locally_linear.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/metrics/cluster/expected_mutual_info_fast.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/metrics/cluster/expected_mutual_info_fast.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/metrics/pairwise_fast.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/metrics/pairwise_fast.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/mixture/bayesian_mixture.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/mixture/bayesian_mixture.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/mixture/tests/test_bayesian_mixture.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/mixture/tests/test_bayesian_mixture.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/model_selection/_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/model_selection/_search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/model_selection/tests/test_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/model_selection/tests/test_search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/model_selection/tests/test_split.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/model_selection/tests/test_split.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/neighbors/ball_tree.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/neighbors/ball_tree.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/neighbors/dist_metrics.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/neighbors/dist_metrics.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/neighbors/kd_tree.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/neighbors/kd_tree.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/neighbors/quad_tree.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/neighbors/quad_tree.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/neighbors/typedefs.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/neighbors/typedefs.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/preprocessing/_discretization.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/preprocessing/_discretization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/preprocessing/_encoders.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/preprocessing/_encoders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/preprocessing/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/preprocessing/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/preprocessing/tests/test_discretization.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/preprocessing/tests/test_discretization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/preprocessing/tests/test_encoders.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/preprocessing/tests/test_encoders.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/semi_supervised/label_propagation.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/semi_supervised/label_propagation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/classes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/liblinear.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/liblinear.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/libsvm.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/libsvm.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/libsvm_sparse.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/libsvm_sparse.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/tests/test_sparse.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/tests/test_sparse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/tests/test_svm.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/svm/tests/test_svm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/tests/test_impute.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/tests/test_impute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/tree/_criterion.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/tree/_criterion.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/tree/_splitter.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/tree/_splitter.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/tree/_tree.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/tree/_tree.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/tree/_utils.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/tree/_utils.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/_logistic_sigmoid.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/_logistic_sigmoid.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/_random.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/_random.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/arrayfuncs.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/arrayfuncs.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/estimator_checks.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/estimator_checks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/fast_dict.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/fast_dict.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/graph_shortest_path.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/graph_shortest_path.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/lgamma.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/lgamma.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/murmurhash.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/murmurhash.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/seq_dataset.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/seq_dataset.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/sparsefuncs_fast.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/sparsefuncs_fast.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/weight_vector.cpython-37m-x86_64-linux-gnu.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sklearn/utils/weight_vector.cpython-37m-x86_64-linux-gnu.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/wrapt-1.11.1-py3.7.egg-info/PKG-INFO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/wrapt-1.11.1-py3.7.egg-info/SOURCES.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/wrapt-1.11.1-py3.7.egg-info/dependency_links.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/wrapt-1.11.1-py3.7.egg-info/installed-files.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/wrapt-1.11.1-py3.7.egg-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/wrapt/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/wrapt/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin-0.8.dist-info/DESCRIPTION.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin-0.8.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin-0.8.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin-0.8.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin-0.8.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin-0.8.dist-info/metadata.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin-0.8.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin/options.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin/setup.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin/stock_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin/stock_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/yahoo_fin/testing.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -344,11 +148,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="564" />
-    <option name="y" value="326" />
-    <option name="width" value="1281" />
-    <option name="height" value="711" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="27" />
+    <option name="width" value="930" />
+    <option name="height" value="1046" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -604,7 +407,7 @@
       <workItem from="1552890400212" duration="9105000" />
       <workItem from="1552984887545" duration="1221000" />
       <workItem from="1553150843703" duration="2141000" />
-      <workItem from="1553499417743" duration="5032000" />
+      <workItem from="1553499417743" duration="5099000" />
     </task>
     <task id="LOCAL-00001" summary="second commit- added api key">
       <created>1547446992148</created>
@@ -627,11 +430,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551242485412</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="testKnnReg.&#10;sebagai Test untuk algo k-Neighbors Regressors">
+      <created>1553512854806</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1553512854806</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320100000" />
+    <option name="totallyTimeSpent" value="320167000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
