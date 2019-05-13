@@ -31,180 +31,294 @@ import matplotlib.pyplot as plt
 
 import math
 import operator
+from collections import Counter
+from sklearn.metrics import accuracy_score
+from scipy.spatial import distance
+from collections import defaultdict
 
-# https://github.com/vishwajeetv/stock_prediction/blob/master/backend/predictorWeekly.py
-def normalize(df):
-    normalizedValues = (df- df.mean())/df.std()
-    return normalizedValues
+
+plotly.tools.set_credentials_file(username='junhin04', api_key='c0YKlYKB4vqlUGfaEDNO')
+ts = TimeSeries(key=getApiKey(), output_format='pandas')
+
+class KnnBase(object):
+
+    """
+    def __init__(self, k, weights=None):
+        self.k = k
+        self.weights = weights
+
+    """
+
+    def __init__(self, k):
+        self.k = k
+        # self.weights = weights
+
+    def list_to_npArray(vector1, vector2):
+        '''convert the list to numpy array'''
+        if type(vector1) == list:
+            vector1 = np.array(vector1)
+        if type(vector2) == list:
+            vector2 = np.array(vector2)
+        return vector1, vector2
 
 
-def readData():
-    symbol = "ADHI.JKT"
-    ts = TimeSeries(key=getApiKey(), output_format='pandas')
-    data, meta_data = ts.get_daily_adjusted(symbol=symbol, outputsize='full')
-    # print(data[data.columns[0:7]])
-    # print(meta_data)
-    data_sorted_by_date = data.sort_values('date')
-    # data_sorted_by_date['date'] = pd.to_datetime(data_sorted_by_date['date'])
+    def euclidean_distance(self, data_point1, data_point2):
+        # if len(data_point1) != len(data_point2) :
+        #     raise ValueError('feature length not matching')
+        # else:
+        #     distance = np.sqrt(sum((data_point2 - data_point1) ** 2))
 
-    sorted_low_price = data_sorted_by_date['3. low'].values
-    sorted_high_price = data_sorted_by_date['2. high'].values
-    sorted_open_price = data_sorted_by_date['1. open'].values
-    sorted_close_price = data_sorted_by_date['5. adjusted close'].values
+        return math.sqrt(sum((data_point1 - data_point2) ** 2))
 
-    # dari ko Julio
-    low_price = data['3. low'].values
-    high_price = data['2. high'].values
-    open_price = data['1. open'].values
-    close_price = data['5. adjusted close'].values
+        # dist = [(a-b)**2 for a, b in zip(data_point1, data_point2)]
+        # dist = math.sqrt(sum(dist))
+        # return dist
 
-    sorted_date = data_sorted_by_date.index.get_level_values(level='date')
+        # return distance.euclidean(data_point1, data_point2)
 
-    # date = data_sorted_by_date.index.get_level_values(level='date')
+    def fit(self, train_X, train_y):
+        self.train_X = train_X
+        self.train_y = train_y
+        return self
 
-    # numpy, X
-    data_numpy_form = np.stack(
-        (sorted_date, sorted_open_price, sorted_low_price, sorted_high_price, sorted_close_price), axis=1)
+    def get_neighbors(self, train_set_data_points, test_feature_data_point, k):
+        distances = []
+        # length = len(test_feature_data_point)-1
+        length = (train_set_data_points.shape[0])-1
+        for index in range(len(train_set_data_points)):
+            dist = self.euclidean_distance(test_feature_data_point, train_set_data_points.iloc[index],length)
+            distances.append((train_set_data_points[index], dist, index))
+        # distances = distance.euclidean(train_set_data_points, test_feature_data_point)
+        distances.sort(key=operator.itemgetter(1))
+        neighbors = []
+        for index in range(k):
+            neighbors.append(distances[index][0])
+        return neighbors
 
-    # pandas df, pd, dll
-    df = pd.DataFrame(data_numpy_form, columns=['date', 'open', 'low', 'high', 'close'])
+    def get_neighbors_v(self, train_set, test_set, k):
+        ''' return k closet neighbour of test_set in training set'''
+        # calculate euclidean distance
+        euc_distance = np.sqrt(np.sum((train_set - test_set) ** 2, axis=1))
+        # return the index of nearest neighbour
+        return np.argsort(euc_distance)[0:k]
+
+    def distance_weighted(self, distances):
+
+        """
+        distance Weighted
+
+        W(x,p_i) = exp(-Distance(x,p_i)) / sum_from_i=1_to_k exp(-Distance(x,p_i))
+
+        """
+        matches = [(1, y) for d, y in distances if d == 0]
+        return matches if matches else [(1/d, y) for d, y in distances]
+
+
+    def y_predict(self, train_set, test_set, k):
+        """
+        distance Weighted Regression
+
+        y_predictions = sum_from_i=1_to_k W (X_0, X_i)y_i
+
+        """
+        distance = self.get_neighbors_v(train_set, test_set, k)
+        dist = 1. / distance
+        inf_mask = np.isinf(dist)
+        inf_row = np.any(inf_mask,axis=1)
+        dist[inf_row] = inf_mask[inf_row]
+        return dist
+
+
+class KnnRegression(KnnBase):
+    # def _predict_one(self, test_feature_data_point):
+    #     nearest_neighbors = self.get_neighbors(self.train_X, test_feature_data_point, self.k)
+    #     # weighted_distance = self.distance_weighted(distances[: self.k])
+    #     # weights_by_class = defaultdict(list)
+    #     total_val = 0.0
+    #     for index in nearest_neighbors:
+    #         total_val += self._y[index]
+    #
+    #     return total_val/self.k
+
+    def predict(self, X):
+        # return [self._predict_one(x) for x in X]
+        y_pred = np.empty(())
+
+    def predict_by_myself_method(self, train, test):
+        """
+        distances merupakan dictionary di mana
+        key itu berupa nilai index train
+        sedangkan value nya berupa nilai distance euclidean
+
+        :param train:
+        :param test:
+        :return:
+        """
+
+        n_samples = test.shape[0]
+        sample_range = np.arange(0,n_samples)[:, None]
+        distances = {}
+        predictions = []
+        for i in range(len(sample_range)):
+            for j in range(len(train)):
+                # dist = self.euclidean_distance(train[j], test[i])
+                dist = self.euclidean_distance(train.iloc[j], test.iloc[i])
+                distances[j] = dist
+
+            sorted_distances = sorted(distances.items(), key = lambda kv:(kv[1], kv[0]))
+
+            y_pred = 0.0
+            for x in range(self.k):
+                index_sorted_distances = sorted_distances[x][0]
+                y_pred += train.iloc[index_sorted_distances].values
+
+            y_pred = y_pred/self.k
+
+            predictions.extend(y_pred)
+
+        return predictions
+    #             sort distance
+
+
+
+    """
+    def predict(self, test_feature_data_point):
+        _y = np.array(self._y)
+        _y.astype(int)
+        if _y.ndim == 1:
+            _y = _y.reshape(-1,1)
+
+        if weights is None:
+            y_pred = np.mean(_y[neigh_ind], axis=1)
+        else:
+            y_pred = np.empty((X.shape[0], _y.shape[1]), dtype=np.float64)
+            denom = np.sum(weights, axis=1)
+
+            for j in range(_y.shape[1]):
+                num = np.sum(_y[neigh_ind, j] * weights, axis=1)
+                y_pred[:, j] = num / denom
+
+        if self._y.ndim == 1:
+            y_pred = y_pred.ravel()
+
+        nearest_data_point_index = self.get_neighbors(self.train_feature, test_feature_data_point, self.k)
+        total_val = 0.0
+        # calculate the sum of all the label values
+        for index in nearest_data_point_index:
+            total_val += self.train_label[index]
+
+        return total_val/self.k
+    """
+
+def get_rmse(y, y_pred):
+    '''Root Mean Square Error
+    https://en.wikipedia.org/wiki/Root-mean-square_deviation
+    '''
+    mse = np.mean((y - y_pred)**2)
+    return np.sqrt(mse)
+
+def get_mape(y, y_pred):
+    '''Mean Absolute Percent Error
+    https://en.wikipedia.org/wiki/Mean_absolute_percentage_error
+    '''
+    perc_err = (100*(y - y_pred))/y
+    return np.mean(abs(perc_err))
+
+
+def get_accuracy(y, y_pred):
+    cnt = (y == y_pred).sum()
+    return round(cnt/len(y), 2)
+
 
 def main():
-    plotly.tools.set_credentials_file(username='junhin04', api_key='c0YKlYKB4vqlUGfaEDNO')
-    symbol = "ADHI.JKT"
-    ts = TimeSeries (key=getApiKey(), output_format='pandas')
-    data, meta_data = ts.get_daily_adjusted(symbol=symbol, outputsize='full')
-    # print(data[data.columns[0:7]])
-    # print(meta_data)
-    data_sorted_by_date = data.sort_values('date')
-    # data_sorted_by_date['date'] = pd.to_datetime(data_sorted_by_date['date'])
+    symbol = 'ADHI.JKT'
+    stock, meta_data = ts.get_daily_adjusted(symbol, outputsize='full')
+    stock = stock.sort_values('date')
 
-    sorted_low_price = data_sorted_by_date['3. low'].values
-    sorted_high_price = data_sorted_by_date['2. high'].values
-    sorted_open_price = data_sorted_by_date['1. open'].values
-    sorted_close_price = data_sorted_by_date['5. adjusted close'].values
+    open_price = stock['1. open'].values
+    low = stock['3. low'].values
+    high = stock['2. high'].values
+    close = stock['4. close'].values
+    sorted_date = stock.index.get_level_values(level='date')
 
+    stock_numpy_format = np.stack((sorted_date, open_price, low
+                                   , high, close), axis=1)
+    df = pd.DataFrame(stock_numpy_format, columns=['date', 'open', 'low', 'high', 'close'])
 
-    # dari ko Julio
-    low_price = data['3. low'].values
-    high_price = data['2. high'].values
-    open_price = data['1. open'].values
-    close_price = data['5. adjusted close'].values
-
-    sorted_date = data_sorted_by_date.index.get_level_values(level='date')
-
-    # date = data_sorted_by_date.index.get_level_values(level='date')
-
-    # numpy, X
-    data_numpy_form = np.stack((sorted_date, sorted_open_price, sorted_low_price, sorted_high_price, sorted_close_price), axis=1)
-
-    # pandas df, pd, dll
-    df = pd.DataFrame(data_numpy_form, columns=['date','open','low', 'high', 'close'])
     df = df[df['open'] > 0]
+    df = df[(df['date'] >= "2016-01-01") & (df['date'] <= "2018-12-31")]
+    df = df.reset_index(drop=True)
 
-    # untuk bedain data 2016, 2017, 2018
-    data_2016_actual = df[(df['date'] >= '2016-01-01') & (df['date'] <= '2016-12-31')]
-    data_2017_actual = df[(df['date'] >= '2017-01-01') & (df['date'] <= '2017-12-31')]
-    data_2018_actual = df[(df['date'] >= '2018-01-01') & (df['date'] <= '2018-12-31')]
+    df['close_next'] = df['close'].shift(-1)
+    df['daily_return'] = df['close'].pct_change(1)
+    df.fillna(0, inplace=True)
 
-    # sumber
-    # https://github.com/nileshbhadana/ML/blob/835af9dc58e4341e17507effa9ecfe85bbdc03be/stock_prediction.py
+    distance_column_1 = ['close']
+    distance_column_2 = ['date', 'close']
+    distance_column_3 = ['close', 'daily_return']
+    distance_column_4 = ['date', 'close', 'daily_return']
 
-    price_close_pd = close_price.reshape(-1,1)
-
-    day = []
-    for i in range(len(data_2016_actual)):
-        day.append(i)
-
-    day_count = np.array(day).reshape(-1,1)
-
-
-    # X_train, X_test, y_train, y_test = train_test_split(day_count, data_2016_actual['close'], train_size=0.75, shuffle=False)
-
-    # X_train = X_train.reshape(-1, 1)
-    # X_test = X_test.reshape(-1, 1)
-    # y_train = y_train.reshape(-1, 1)
-    # y_test = y_test.reshape(-1, 1)
-
-    cut_point = int(len(day) * 0.8)
-    X_train = day_count[:cut_point]
-    X_test = day_count[cut_point:]
-    y_train = data_2016_actual[:cut_point]['close']
-    y_test = data_2016_actual[cut_point:]['close']
-
-    knr = KNeighborsRegressor(n_neighbors=4, weights='distance', p=2, metric='euclidean')
-
-    X_train_new = np.array(X_train)
-    y_train_new = np.array(y_train)
-    X_test_new = np.array(X_test)
-    y_test_new = np.array(y_test)
-
-    print(X_train_new.dtype)
-    # print(y_train_new.shape(1))
-    # print(y_train_new.shape[1])
-
-    # predict_price = [i for i in range(len(X_test))]
-    predict_price= []
-    print(predict_price)
-    print(range(len(X_test)))
-    print(len(X_test))
-    type(X_test)
-
-    number_data_test = len(X_test_new)
-
-    for j in range (len(X_test_new)+1):
-        knr_price_fit= knr.fit(X_train_new, y_train_new)
-        knr_price_predict = knr_price_fit.predict(X_test_new)
-        knr_price_predict_mean = np.mean(knr_price_predict)
-        print(knr_price_predict_mean)
-
-        if predict_price == 1:
-            predict_price.extend(knr_price_predict_mean)
-        else:
-            predict_price.append(knr_price_predict_mean)
+    # stock_numeric_close = df[distance_column_1]
+    # stock_numeric_close_date = df[distance_column_2]
+    # stock_numeric_close_dailyreturn = df[distance_column_3]
+    # stock_numeric_date_close_dailyreturn = df[distance_column_4]
+    # print(df.columns.toList())
 
 
-        # if not predict_price: #kalau kosong
-        #     predict_price.append(knr_price_predict_mean)
-        # else:
-        #     predict_price.extend(knr_price_predict_mean)
+    test_cutoff = math.floor(len(df) / 1.5)
 
-        y_train_new = np.insert(y_train_new, [len(y_train_new+1)], knr_price_predict_mean,axis=0)
-        # X_train_new = X_train_new.__iadd__(len(X_train_new)+1)
-        X_train_new = np.insert(X_train_new, [len(X_train_new+1)], len(X_train_new+1), axis=0)
-        pass
+    test = df.loc[df.index[test_cutoff:]]
+    train = df.loc[df.index[1:test_cutoff]]
 
-        # delete index pertama X_test_new
-        # number_data_test -= 1
-        # np.delete(X_test_new, [0])
+    train = train.reset_index(drop=True)
+    test = test.reset_index(drop=True)
 
-        # X_train_new = np.vstack((X_train_new,len(X_test_new)+1))
-        # del X_test_new[0]  #hapus index pertama
+    # test = df.loc[df.index[test_cutoff:]]
+    # train = df.loc[df.index[:test_cutoff]]
 
-    print(predict_price)
+    # X_train, X_test, y_train, y_test = train_test_split(df['close'], df['close_next'], test_size=0.3, shuffle=False)
+    x_column = ['close']
+
+    y_column = ['close_next']
+
+    # a = test[x_column]
+
+    knr = KnnRegression(6)
+    knr.fit(train[x_column], train[y_column])
+    predictions = knr.predict_by_myself_method(train[x_column], test[x_column])
+    predictions = pd.DataFrame(np.row_stack(predictions))
+    print(predictions)
+
+    actual = train[x_column]
+    print(math.sqrt(mean_squared_error(actual, predictions)))
+
+    rmse = math.sqrt((((predictions - actual) ** 2).sum()) / len(predictions))
+    print(rmse)
+
     trace_actual = go.Scatter(
-        x = data_2016_actual['date'],
-        y= data_2016_actual['close'],
-        name = "ADHI ACTUAL",
-        line=dict(color='#17BECF'),
-        opacity= 0.8
+        x=df['date'],
+        y=actual['close_next'],
+        name=symbol + " Actual",
+        line=dict(color='red'),
+        opacity=0.8
+
     )
+
     trace_predict = go.Scatter(
-        x =data_2016_actual['date'],
-        y= list(y_train) + predict_price,
-        name = "ADHI PREDICT",
-        line=dict(color='#7F7F7F'),
+        x=df['date'],
+        y=predictions,
+        name=symbol + " Predictions",
+        line=dict(color='green'),
         opacity=0.8
     )
 
-    data_all = [trace_actual, trace_predict]
+    data_trace = [trace_actual, trace_predict]
 
-    # data_all = [trace_actual]
     layout = dict(
-        title = 'ADHI ranges slider',
-        xaxis = dict(
-            rangeselector = dict(
-                buttons = list([
+        title=symbol + " ranges slider",
+        xaxis=dict(
+            rangeselector=dict(
+                buttons=list([
                     dict(count=1,
                          label='1m',
                          step='month',
@@ -223,11 +337,8 @@ def main():
         )
     )
 
-    fig = dict(data = data_all, layout=layout)
-    py.plot(fig, filename = "ADHI stock price prediction")
-    # print(data_sorted)
-
-    # plt.plot(X_pd_date, knr_np_predict, 'k')
+    fig = dict(data=data_trace, layout=layout)
+    py.plot(fig, filename=symbol + " stock price prediction")
 
 if __name__ == '__main__':
     main()

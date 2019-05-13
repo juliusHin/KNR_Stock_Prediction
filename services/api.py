@@ -1,88 +1,153 @@
-from builtins import print
-
-from alpha_vantage.timeseries import TimeSeries
-import matplotlib.pyplot as plt
-import os
+import math
 import numpy as np
 import pandas as pd
+from scipy.spatial import distance
+import matplotlib.patches as mpatches
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn import metrics
+from alpha_vantage.timeseries import TimeSeries
+from services.KEY import getApiKey
+import plotly
 import plotly.plotly as py
 import plotly.graph_objs as go
-import plotly.figure_factory as FF
-from scipy.optimize import curve_fit
-from sklearn import preprocessing, model_selection
-from sklearn.linear_model import LinearRegression
-from sklearn.neighbors import KNeighborsRegressor
 
-# you can get apiKey from AlphaVantage.co
-from services.KEY import getApiKey
-from services.KNNAlgorithm import KNNAlgo as knna
-
-from datetime import datetime
-
-# from scikit learn SKLearn
-from sklearn import neighbors
-
-import matplotlib
-import matplotlib.pyplot as plt
+from services.KNR import KNN_Regression
 
 class API_Stock:
-    data_actual= []
-    meta_data = []
-    data_predictions=[]
 
-    def readDataStock(self, symbolStock):
-        ts = TimeSeries(key=getApiKey(), output_format='pandas')
-        data, meta_data = ts.get_daily_adjusted(symbol=symbolStock, outputsize="full")
-        return data, meta_data
+    plotly.tools.set_credentials_file(username='junhin04', api_key='c0YKlYKB4vqlUGfaEDNO')
+    ts = TimeSeries(key=getApiKey(), output_format='pandas')
 
+    def __init__(self, symbolstock, k):
+        self.__symbolstock = symbolstock
+        self.__k = k
 
-    def getPredictData_and_actualData(self):
-        predict_close=[]
+    '''
+    sumber
+    https://github.com/DavidCico/Self-implementation-of-KNN-algorithm/blob/master/Abalone_case_study_regression.ipynb
+    '''
+    ## Convert string column to float
+    def str_column_to_float(self, dataset, column):
+        for row in dataset:
+            row[column] = float(row[column].strip())
 
-        knna.predictFor()
+    ## Convert string column to integer
+    def str_column_to_int(self,dataset, column):
+        class_values = [row[column] for row in dataset]
+        unique = set(class_values)
+        lookup = dict()
+        for i, value in enumerate(unique):
+            lookup[value] = i
+        for row in dataset:
+            row[column] = lookup[row[column]]
+        return lookup
 
+    def knn_stock_prediction(self):
+        stock, meta_data = self.ts.get_daily_adjusted(self.__symbolstock,outputsize='full')
+        stock = stock.sort_values('date')
 
-    def knn_stock_prediction(self, symbolStock):
-        data, meta_data = self.getByStockSy(symbolStock)
+        open_price = stock['1. open'].values
+        low = stock['3. low'].values
+        high = stock['2. high'].values
+        close = stock['4. close'].values
+        sorted_date = stock.index.get_level_values(level='date')
 
-        # actual data
-        # sumber: https://plot.ly/python/plot-data-from-csv/
-        df_external_source = FF.create_table(data.head())
-        py.iplot(df_external_source, filename='df-external-source-table')
+        stock_numpy_format = np.stack((sorted_date, open_price, low
+                                       , high, close), axis=1)
+        df = pd.DataFrame(stock_numpy_format, columns=['date', 'open', 'low', 'high', 'close'])
 
+        df = df[df['open'] > 0]
+        df = df[(df['date'] >= "2016-01-01") & (df['date'] <= "2018-12-31")]
+        df = df.reset_index(drop=True)
 
-        # X Itu datanya
-        # y targetnya
-        # ploting lebih bagus per tahun atau per bulan, jangan per hari
-        knn = KNeighborsRegressor(n_neighbors=4,weights='distance', p=2, metric='euclidian')
-        y = knn.fit()
-            
+        df['close_next'] = df['close'].shift(-1)
+        df['daily_return'] = df['close'].pct_change(1)
+        df.fillna(0, inplace=True)
+
+        distance_column_1 = ['close']
+        distance_column_2 = ['date', 'close']
+        distance_column_3 = ['close', 'daily_return']
+        distance_column_4 = ['date', 'close', 'daily_return']
+
+        test_cutoff = math.floor(len(df) / 3)
+        test = df.loc[df.index[1:test_cutoff]]
+        train = df.loc[df.index[test_cutoff:]]
+
+        # x_column = ['close', 'daily_return']
+
+        # x_column = ['date', 'close']
+
+        for x in range (1, len(df)):
+            self.str_column_to_float(df,x)
+
+        self.str_column_to_int(df,0)
+
+        x_column = ['close']
+
+        y_column = ['close_next']
+
+        # predictions = KNR.knn_regressor(train[x_column],train[y_column], test[x_column], 3)
+        # a = train[y_column]
+        # b = test[x_column]
+
+        predictions = []
+
+        knr = KNN_Regression(self.__k)
+        knr.fit(train[x_column], train[y_column])
+        for i in len(test[x_column]):
+            neighbors = knr.getNeighbors(train[y_column], test[x_column].iloc[i],self.__k)
+            output = knr.getRegression(neighbors)
+            predictions.append(output)
+
+        actual = test[y_column]
+
+        print(math.sqrt(metrics.mean_squared_error(actual, predictions)))
+
         trace_actual = go.Scatter(
-            x=data['timestamp'],
-            y=data['4. close'],
-            name= 'Actual Price',
-            line=dict(
-                color='blue',
-                width = 4,
-                dash = 'dash'
+            x=df['date'],
+            y=actual['close_next'],
+            name=self.__symbolstock+ " Actual",
+            line=dict(color='red'),
+            opacity=0.8
+
+        )
+
+        trace_predict = go.Scatter(
+            x=df['date'],
+            y=predictions,
+            name=self.__symbolstock + " Predictions",
+            line=dict(color='green'),
+            opacity=0.8
+        )
+
+        data_trace = [trace_actual, trace_predict]
+
+        layout = dict(
+            title=self.__symbolstock + " ranges slider",
+            xaxis=dict(
+                rangeselector=dict(
+                    buttons=list([
+                        dict(count=1,
+                             label='1m',
+                             step='month',
+                             stepmode='backward'),
+                        dict(count=6,
+                             label='6m',
+                             step='month',
+                             stepmode='backward'),
+                        dict(step='all')
+                    ])
+                ),
+                rangeslider=dict(
+                    visible=True
+                ),
+                type='date'
             )
         )
 
+        fig = dict(data=data_trace, layout=layout)
+        return py.plot(fig, filename=self.__symbolstock + " stock price prediction")
 
-        # Hasil Prediksi
-        trace_prediction = go.Scatter(
-
-        )
-
-        data_all = [trace_actual, trace_prediction]
-
-        # layout
-        layout = go.Layout(
-            title="Stock Price Prediction Result " + symbolStock,
-            plot_bgcolor='white',
-            showlegend=True
-        )
-        fig = go.Figure(data=[trace_actual],)
-
-        return data_graph, data_table
-
+if __name__ == '__main__':
+    tes = API_Stock('WIKA.JKT',3)
+    tes.knn_stock_prediction()
