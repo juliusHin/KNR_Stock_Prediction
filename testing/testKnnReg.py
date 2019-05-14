@@ -110,8 +110,9 @@ class KnnBase(object):
         W(x,p_i) = exp(-Distance(x,p_i)) / sum_from_i=1_to_k exp(-Distance(x,p_i))
 
         """
-        matches = [(1, y) for d, y in distances if d == 0]
-        return matches if matches else [(1/d, y) for d, y in distances]
+        # matches = [(1, y) for d, y in distances if d == 0]
+        # return matches if matches else [(1/d, y) for d, y in distances]
+
 
 
     def y_predict(self, train_set, test_set, k):
@@ -289,15 +290,15 @@ def main():
     predictions = pd.DataFrame(np.row_stack(predictions))
     print(predictions)
 
-    actual = train[x_column]
-    print(math.sqrt(mean_squared_error(actual, predictions)))
+    actual = test[x_column]
+    # print(math.sqrt(mean_squared_error(actual, predictions)))
 
     rmse = math.sqrt((((predictions - actual) ** 2).sum()) / len(predictions))
     print(rmse)
 
     trace_actual = go.Scatter(
         x=df['date'],
-        y=actual['close_next'],
+        y=actual,
         name=symbol + " Actual",
         line=dict(color='red'),
         opacity=0.8
