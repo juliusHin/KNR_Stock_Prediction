@@ -1,9 +1,7 @@
-from flask import Flask, request, render_template
-from services.api import API_Stock
-import os
-import time
-from DateTime import DateTime
+from flask import Flask, request, render_template, Markup
+from plotly.offline import plot
 
+from services.api import API_Stock
 
 app = Flask(__name__)
 
@@ -14,14 +12,16 @@ def hello_world():
     return render_template('index.html')
 
 
-@app.route('/handle_data', methods=['GET'])
+@app.route('/result', methods=['GET'])
+
 def handle_data():
     selected = request.args.get('stockList')
-    data = selected + '.JKT'
-    api = API_Stock()
-    data_graph = api.knn_stock_prediction(symbolStock = data)
-#     return halaman yang menampilkan data grafik, tabel, result.html
-    return render_template('result.html', selected, data_graph)
+
+    symbol = selected + '.JKT'
+    api = API_Stock(symbol, 6)
+    data_graph = api.getResult()
+    plot_div = plot(data_graph, output_type='div')
+    return render_template('result.html', title=str(selected), data_graph=Markup(plot_div))
 
 @app.route('/about')
 def aboutPage():

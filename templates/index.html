@@ -4,6 +4,9 @@
    <head>
    
       <meta charset="UTF-8">
+       {#        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">#}
+       {#        <meta content="utf-8" http-equiv="encoding">#}
+
 
 {#   {% block head %}#}
        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -14,6 +17,7 @@
 
 {#        untuk plot.ly cdn#}
     <script src="https://cdn.plot.ly/plotly-basic-latest.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
 
    <link rel="stylesheet" type="text/css" href="/static/simple.css">
       <style>
@@ -46,8 +50,8 @@
             ('/about', 'about', 'About')]
          -%}
          {% set active_page = active_page|default('index') -%}
-            <a class="navbar-brand" href="#">
-            <img src="bird.jpg" alt="logo" style="width:40px;">
+             <a class="navbar-brand" href="/">
+                 <img src="logo/stocktrendspotter_logo.jpg" style="width:40px;">
             </a>
             <!-- Links -->
             <ul id="navigation" class="navbar-nav">

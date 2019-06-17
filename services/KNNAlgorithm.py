@@ -1,188 +1,106 @@
 # sumber
 # https://github.com/sammanthp007/Stock-Price-Prediction-Using-KNN-Algorithm/blob/master/knnAlgorithm.py
 
-import random, json, math, operator, datetime, csv
-import pandas_datareader.data as web
-import pandas as pd
 import numpy as np
-import matplotlib
-import seaborn
-from scipy import stats
-from sklearn import neighbors
-from sklearn.model_selection import GridSearchCV
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
+from scipy.spatial import distance
 
 
-import matplotlib.pyplot as plt # import matplotlib
 # from pandas.core.indexes import range
-from alpha_vantage.timeseries import TimeSeries
-from services.KEY import getApiKey
 
-class KNNAlgo:
+class KnnAlgo(object):
+    def __init__(self, k):
+        self.k = k
 
-    # handle data
-    # sumber
-    # https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/
-
-    # split the data into a trainingdataset and testdataset in ratio of 67/33
-    split = 0.67
-
-    def loadDataset(self,filesource, split, trainingSet=[], testSet=[], content_header=[]):
-        with open(filesource, 'rb') as csvfile:
-            #mengembalikan reader object yg akan diiterasi per baris
-            lines = csv.reader(csvfile)
-            # dataset adalah list dr seluruh data, yang tiam baris adalah list
-            dataset = list(lines)
-            #dikurang 1 karena ingin prediksi hari selanjutnya
-            for x in range(len(dataset)-1):
-    #             convert the content to float
-    #              dikurang 1 karena yang terakhir kolom volume
-                for y in range(1, len(content_header)-1):
-                    dataset[x][y] = float(dataset[x][y])
-                if random.random() < split:
-                    trainingSet.append(dataset[x])
-                else:
-                    testSet.append(dataset[x])
-
-    def readData(self, symbolstock):
-        ts = TimeSeries(getApiKey(), output_format='pandas')
-        data, meta_data = ts.get_daily_adjusted(symbol=symbolstock, outputsize='full')
+    def fit(self, train_X, train_y):
+        self.train_X = train_X
+        self.train_y = train_y
+        return self
 
 
+class KnnRegression(KnnAlgo):
+    # def _predict_one(self, test_feature_data_point):
+    #     nearest_neighbors = self.get_neighbors(self.train_X, test_feature_data_point, self.k)
+    #     # weighted_distance = self.distance_weighted(distances[: self.k])
+    #     # weights_by_class = defaultdict(list)
+    #     total_val = 0.0
+    #     for index in nearest_neighbors:
+    #         total_val += self._y[index]
+    #
+    #     return total_val/self.k
 
-    def euclideanDistance(self,instance1, instance2, length):
-        distance = 0
-        for x in range(1, length):
-            distance += pow((instance1[x] - instance2[x]), 2)
-        return math.sqrt(distance)
+    def predict(self, X):
+        # return [self._predict_one(x) for x in X]
+        y_pred = np.empty(())
 
-    # mendapatkan k tetangga terdekat dari <array><num> testInstance diantara <array><array>
-    #trainingSet
-    def getNeighbors(self,trainingSet, testInstance, k):
-        distance=[]
-        length = len(testInstance) - 1 #dikurang 1 karena data dipecah dan test jg kelas yg sudah diketahui
+    def predict_by_myself_method(self, train, test):
+        """
+        distances merupakan dictionary di mana
+        key itu berupa nilai index train
+        sedangkan value nya berupa nilai distance euclidean
 
-        for x in range((len(trainingSet))):
-            dist = self.euclideanDistance(testInstance, trainingSet[x], length)
-            distance.append((trainingSet[x]), dist)
+        :param train:;
+        :param test:
+        :return:
+        """
 
-        # mengurutkan berdasarkan item yg ada pada index 1, distance
-        distance.sort(key=operator.itemgetter(1))
-        neighbors=[]
-        for x in range(k):
-            neighbors.append(distance[x][0])
-        return neighbors
+        n_samples = test.shape[0]
+        sample_range = np.arange(0, n_samples)[:, None]
+        distances = {}
+        predictions = []
+        # distances = distance.euclidean(train, test)
+        for i in range(len(sample_range)):
+            for j in range(len(train)):
+                # dist = self.euclidean_distance(train[j], test[i])
+                # dist = self.euclidean_distance(train.iloc[j], test.iloc[i])
+                dist = distance.euclidean(train.iloc[j], test.iloc[i])
+                distances[j] = dist
 
+            # distances = distance.euclidean(train, test[i])
 
-    # buat semua respon untuk vote di klasifikasinya, yg paling tinggi yang menang
-    def getResponse(self, neighbors):
-        classVotes={}
-        for x in range (len(neighbors)):
-            response = neighbors[x][-1]
-            if response in classVotes:
-                classVotes[response] += 1
-            else:
-                classVotes[response] = 1
-        sortedVotes = sorted(classVotes.iteritems(), key=operator.itemgetter(1), reverse=True)
-        return sortedVotes[0][0]
+            sorted_distances = sorted(distances.items(), key=lambda kv: (kv[1], kv[0]))
 
+            y_pred = 0.0
+            for x in range(self.k):
+                index_sorted_distances = sorted_distances[x][0]
+                y_pred += train.iloc[index_sorted_distances].values
 
-    # menggunakan Testset
-    def getAccuracy(testSet, predictions):
-        knn_correct = 0
-        guess_correct=0
-        for x in range(len(testSet)):
-            if testSet[x][-1] == predictions[x]:
-               knn_correct += 1
-            if random.random(0,1) == testSet[x][-1]:
-                guess_correct +=1
+            y_pred = y_pred / self.k
 
-        test = stats.chisquare([knn_correct, len(testSet)-1-knn_correct], f_exp=[guess_correct, len(testSet)-1-guess_correct])
-        p = test[1]
-                
-        return (knn_correct/ float(len(testSet))) * 100.0, (guess_correct/float(len(testSet)-1))*100,0, p
+            predictions.extend(y_pred)
 
+        return predictions
 
-    # menggunakan RMSD
-    def getAccuracy1(self, testSet, predictions):
-        correct = 0
-        for x in range(len(testSet)):
-            if self.RMSD(testSet[x][-1], predictions[x]) < 1:
-                correct += 1
-            return (correct/float(len(testSet))) * 100.0
+    #             sort distance
 
+    def predict_by_myself_method_weighted_distance(self, train, test):
+        """
+                distance Weighted Regression
 
-    # root mean square deviation
-    def RMSD(self, X, Y):
-        return math.sqrt(pow(Y-X, 2))
+                y_predictions = sum_from_i=1_to_k W (X_0, X_i)y_i
 
+        """
 
-    def change(self, today, yesterday):
-        if today > yesterday:
-            return 'up'
-        return 'down'
+        n_samples = test.shape[0]
+        sample_range = np.arange(0, n_samples)[:, None]
+        distances = {}
+        predictions = []
+        for i in range(len(sample_range)):
+            for j in range(len(train)):
+                # dist = self.euclidean_distance(train[j], test[i])
+                dist = self.euclidean_distance(train.iloc[j], test.iloc[i])
+                distances[j] = dist
 
-    # def getData(self, filesource, stockcode, enddate):
-    #     stock = pdData.DataReader(stockcode, )
+            sorted_distances = sorted(distances.items(), key=lambda kv: (kv[1], kv[0]))
+            weighted_distances = self.distance_weighted(sorted_distances)
+            y_pred = 0.0
+            for x in range(self.k):
+                index_sorted_distances = sorted_distances[x][0]
+                # value_y = train.iloc[index_sorted_distances][0]
+                # weight_dist_value = weighted_distances[x]
+                y_pred += train.iloc[index_sorted_distances].values * weighted_distances[x]
 
-    def predictFor(self, k, filesource, stockcode, enddate, writeagain, split):
-        column_header = ["timestamp", "open", "high", "low", "yesterday close", "state change"]
-        trainingSet=[]
-        testSet=[]
-        totalCount=0
+            y_pred = y_pred / self.k
 
-        if writeagain:
-            print("making a network request")
-            self.getData(filesource, stockcode, enddate)
+            predictions.extend(y_pred)
 
-
-        self.loadDataset(filesource,split, trainingSet, testSet, column_header)
-
-        print("Predicting for ", stockcode)
-        print("Train: " + repr(len(trainingSet)))
-        print("Test: " + repr(len(testSet)))
-        totalCount += len(trainingSet) + len(testSet)
-        print("Total: " + repr(totalCount))
-
-    #     buat prediksi dan akurasi. return prediction and accuracy
-        self.predict_and_get_accuracy(testSet, trainingSet, k)
-
-
-
-    def predict_and_get_accuracy(self, testSet, trainingSet, k):
-        predictions=[]
-        for x in range(len(testSet)):
-            neighbors=self.getNeighbors(trainingSet, testSet[x], k)
-            result=self.getResponse(neighbors)
-            predictions.append(result)
-
-        accuracy = self.getAccuracy(testSet,predictions)
-        print('Accuracy: ' + repr(accuracy)+ '%')
-
-        return predictions, accuracy
-        # gambar grafik sesuai prediksi
-
-        #gambar grafik yang sebenarnya
-
-    # dapat dari web
-    def getData(self, filename, stockCode, enddate):
-        ts = TimeSeries(key=getApiKey())
-        stock_ts_data, stock_meta_data = ts.get_daily_adjusted(stockCode, outputsize='full')
-        print('done making network call')
-
-        first_time = True
-        with open(filename, 'wb') as pp:
-            stockwriter = csv.writer(pp)
-            stocksorted = sorted(stock_ts_data.head())
-            for i in stocksorted:
-                new_format_date = i[:10]
-                if first_time:
-                    first_time = False
-                    prev_closing = stock_ts_data[i]['4. close']
-                    continue
-                stockwriter.writerow([new_format_date] + [stock_ts_data[i]['1. open']] + [stock_ts_data[i]['2. high']] + [stock_ts_data[i]['3. low']] + [stock_ts_data[i]['4. close']] + [self.change(stock_ts_data[i]['4. close'], prev_closing)] )
-                prev_closing = stock_ts_data[i]['4. close']
-
-
-
-
+        return predictions

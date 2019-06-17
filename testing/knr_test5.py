@@ -1,25 +1,19 @@
-import csv
-import random
 import math
-import operator
+
 import numpy as np
 import pandas as pd
-from scipy.spatial import distance
-from scipy.spatial.distance import squareform, pdist
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn import metrics
-from alpha_vantage.timeseries import TimeSeries
-from services.KEY import getApiKey
 import plotly
-import plotly.plotly as py
 import plotly.graph_objs as go
-from sklearn.model_selection import train_test_split
+import plotly.plotly as py
+from alpha_vantage.timeseries import TimeSeries
+from sklearn import metrics
+from sklearn.neighbors import KNeighborsRegressor
+
+from services.KEY import getApiKey
 
 plotly.tools.set_credentials_file(username='junhin04', api_key='c0YKlYKB4vqlUGfaEDNO')
 
-symbol = "WSKT.JKT"
+symbol = "ADHI.JKT"
 
 ts = TimeSeries(key=getApiKey(), output_format='pandas')
 
@@ -66,7 +60,7 @@ stock_normalized = (stock_numeric_close - stock_numeric_close.mean()) / stock_nu
 # second_smallest = distance_frame.iloc[1]["idx"]
 # most_similar_to_date = df.loc[int(second_smallest)]["date"]
 
-test_cutoff = math.floor(len(df)/3)
+test_cutoff = math.floor(len(df) / 1.5)
 test = df.loc[df.index[test_cutoff:]]
 train = df.loc[df.index[1:test_cutoff]]
 
@@ -85,19 +79,24 @@ knn = KNeighborsRegressor(n_neighbors=6, weights='distance', metric='euclidean')
 knn.fit(train[x_column], train[y_column])
 predictions = knn.predict(test[x_column])
 
+# coba ubah index nya supaya mulai dari index test
+# predictions.index = test.index.get_level_values(0).values
+
 # knn.fit(X_train, y_train)
 # predictions = knn.predict(X_test)
 
 actual = test[y_column]
-
+# actual = pd.DataFrame(test[y_column], test.index.get_level_values(0).values)
+# actual.index =
 # print(knn.score(test[x_column], test[y_column]))
 # print(metrics.accuracy_score(actual,predictions))
 
 print(math.sqrt(metrics.mean_squared_error(actual, predictions)))
 
-rmse= math.sqrt( (((predictions - actual) ** 2).sum() ) / len(predictions))
+rmse = math.sqrt((((predictions - actual) ** 2).sum()) / len(predictions))
 print(rmse)
-
+r_square = metrics.r2_score(actual, predictions)
+print(r_square)
 # print(knn.score(predictions,actual))
 
 
@@ -114,7 +113,7 @@ plt.show()
 '''
 
 trace_actual = go.Scatter(
-    x=df['date'],
+    x=df['date'][test_cutoff:],
     y = actual['close_next'],
     name= symbol + " Actual",
     line=dict(color='red'),
@@ -123,7 +122,7 @@ trace_actual = go.Scatter(
 )
 
 trace_predict = go.Scatter(
-    x=df['date'],
+    x=df['date'][test_cutoff:],
     y = predictions,
     name= symbol + " Predictions",
     line=dict(color='green'),
@@ -133,7 +132,7 @@ trace_predict = go.Scatter(
 data_trace = [trace_actual, trace_predict]
 
 layout = dict(
-    title = symbol + " ranges slider",
+    title=symbol + " ranges slider (" + str(r_square) + ")",
     xaxis = dict(
             rangeselector = dict(
                 buttons = list([

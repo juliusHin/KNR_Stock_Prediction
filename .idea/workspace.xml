@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb7fcc17-27ce-4d3b-8837-53c2c5b5cbc8" name="Default Changelist" comment="testKnnReg.&#10;almost finished">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/KNNAlgorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/KNNAlgorithm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/knr_test5.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/knr_test5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/test4Json.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testing/testKnn3.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/testing/testKnnReg.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing/testKnnReg.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,69 +34,53 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testing/knr_test5.py">
+        <entry file="file://$PROJECT_DIR$/services/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1770">
-              <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
+            <state relative-caret-position="367">
+              <caret line="141" column="18" selection-start-line="141" selection-start-column="18" selection-end-line="141" selection-end-column="18" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/sklearn/neighbors/regression.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2220">
-              <caret line="156" selection-start-line="156" selection-end-line="156" />
-              <folding>
-                <element signature="e#499#514#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/sklearn/utils/validation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8880">
-              <caret line="609" selection-start-line="609" selection-end-line="609" />
-              <folding>
-                <element signature="e#226#241#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/sklearn/neighbors/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5985">
-              <caret line="420" selection-start-line="420" selection-end-line="420" />
-              <folding>
-                <element signature="e#402#431#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/pandas/core/frame.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38955">
-              <caret line="2687" selection-start-line="2687" selection-end-line="2687" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/testing/testKnnReg.py">
+        <entry file="file://$PROJECT_DIR$/templates/result.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="114" selection-start-line="114" selection-end-line="114" />
+            <state relative-caret-position="195">
+              <caret line="13" column="72" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="72" />
               <folding>
-                <element signature="e#0#47#0" expanded="true" />
+                <element signature="e#453#478#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/about.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -147,28 +141,29 @@
         <option value="$PROJECT_DIR$/services/KEY.py" />
         <option value="$PROJECT_DIR$/testing/test4Json.py" />
         <option value="$PROJECT_DIR$/services/apm.py" />
-        <option value="$PROJECT_DIR$/services/KNNAlgorithm.py" />
-        <option value="$PROJECT_DIR$/templates/result.html" />
-        <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/testing/testKnRegressor.py" />
         <option value="$PROJECT_DIR$/testing/testKNR.py" />
         <option value="$PROJECT_DIR$/testing/testingknr4.py" />
         <option value="$PROJECT_DIR$/services/knr_from_library.py" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/testing/knn_classification_regression.py" />
         <option value="$PROJECT_DIR$/services/KNR.py" />
-        <option value="$PROJECT_DIR$/services/api.py" />
         <option value="$PROJECT_DIR$/testing/testKnn3.py" />
-        <option value="$PROJECT_DIR$/testing/knr_test5.py" />
         <option value="$PROJECT_DIR$/venv/lib64/python3.7/site-packages/sklearn/neighbors/regression.py" />
         <option value="$PROJECT_DIR$/testing/knn_test_6.py" />
+        <option value="$PROJECT_DIR$/testing/knr_test5.py" />
+        <option value="$PROJECT_DIR$/services/KNNAlgorithm.py" />
         <option value="$PROJECT_DIR$/testing/testKnnReg.py" />
+        <option value="$PROJECT_DIR$/services/api.py" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/templates/result.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="960" />
     <option name="y" value="27" />
-    <option name="width" value="1920" />
+    <option name="width" value="960" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -176,7 +171,31 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JTSkripsiProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JTSkripsiProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JTSkripsiProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JTSkripsiProject" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JTSkripsiProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JTSkripsiProject" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="logo" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -201,7 +220,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.testKnnReg">
+  <component name="RunManager" selected="Flask server.Flask (app.py)">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="JTSkripsiProject" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -238,28 +257,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/services/api.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="knn_classification_regression" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="JTSkripsiProject" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testing" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testing/knn_classification_regression.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -334,6 +331,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Flask (app.py)" type="Python.FlaskServer" temporary="true" nameIsGenerated="true">
+      <module name="JTSkripsiProject" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
     <configuration name="JTSkripsiProject" type="Python.FlaskServer">
       <module name="JTSkripsiProject" />
       <option name="target" value="$PROJECT_DIR$/app.py" />
@@ -351,11 +363,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Flask server.Flask (app.py)" />
         <item itemvalue="Python.testKnnReg" />
         <item itemvalue="Python.knr_test5" />
         <item itemvalue="Python.knn_test_6" />
         <item itemvalue="Python.api" />
-        <item itemvalue="Python.knn_classification_regression" />
       </list>
     </recent_temporary>
   </component>
@@ -484,7 +496,38 @@
       <workItem from="1557651273049" duration="1524000" />
       <workItem from="1557667891751" duration="395000" />
       <workItem from="1557719409991" duration="25607000" />
-      <workItem from="1557817630778" duration="1707000" />
+      <workItem from="1557817630778" duration="9538000" />
+      <workItem from="1557901711362" duration="9791000" />
+      <workItem from="1557920497332" duration="4080000" />
+      <workItem from="1557988069642" duration="10265000" />
+      <workItem from="1558086511357" duration="618000" />
+      <workItem from="1558334176486" duration="6334000" />
+      <workItem from="1558444801836" duration="374000" />
+      <workItem from="1558499515865" duration="11257000" />
+      <workItem from="1558970511072" duration="3646000" />
+      <workItem from="1559195785798" duration="5784000" />
+      <workItem from="1559214316886" duration="1711000" />
+      <workItem from="1559278407780" duration="1296000" />
+      <workItem from="1559480140300" duration="659000" />
+      <workItem from="1559658546912" duration="344000" />
+      <workItem from="1559802026658" duration="4165000" />
+      <workItem from="1559882729273" duration="1034000" />
+      <workItem from="1560238087019" duration="686000" />
+      <workItem from="1560258599491" duration="3046000" />
+      <workItem from="1560318655032" duration="3736000" />
+      <workItem from="1560341464020" duration="8900000" />
+      <workItem from="1560394601193" duration="3264000" />
+      <workItem from="1560400569345" duration="328000" />
+      <workItem from="1560486669761" duration="2098000" />
+      <workItem from="1560496610522" duration="93000" />
+      <workItem from="1560496764317" duration="2536000" />
+      <workItem from="1560500536850" duration="1481000" />
+      <workItem from="1560509538372" duration="2277000" />
+      <workItem from="1560581416436" duration="4608000" />
+      <workItem from="1560665217211" duration="75000" />
+      <workItem from="1560665441479" duration="3584000" />
+      <workItem from="1560671034866" duration="596000" />
+      <workItem from="1560725472079" duration="4368000" />
     </task>
     <task id="LOCAL-00001" summary="second commit- added api key">
       <created>1547446992148</created>
@@ -532,7 +575,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="601144000" />
+    <option name="totallyTimeSpent" value="712009000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -545,31 +588,32 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3085339" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.3660619" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="aws.explorer" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3291714" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49839914" weight="0.30021834" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6152615" weight="0.40174672" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286026" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49839914" visible="true" weight="0.4213974" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.61472785" weight="0.4593438" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49893278" weight="0.32969433" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.4994664" weight="0.32969433" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.38473853" side_tool="true" weight="0.36790392" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49519745" visible="true" weight="0.35371178" />
-      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.7822839" weight="0.34167573" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.38527215" side_tool="true" weight="0.35152838" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49519745" weight="0.3569869" />
+      <window_info anchor="bottom" id="Python Console" order="12" sideWeight="0.7822839" weight="0.26528385" />
       <window_info anchor="bottom" id="Messages" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" sideWeight="0.5844595" visible="true" weight="0.18836713" />
+      <window_info anchor="right" id="SciView" order="3" sideWeight="0.8537118" weight="0.25667024" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" x="0" y="0" width="190" height="818" id="Documentation" order="5" sideWeight="0.41554055" side_tool="true" visible="true" weight="0.18836713" />
+      <window_info anchor="right" x="0" y="0" width="190" height="818" id="Documentation" order="5" sideWeight="0.14628822" side_tool="true" visible="true" weight="0.1430096" />
       <window_info anchor="right" id="Coverage" order="6" side_tool="true" />
     </layout>
     <layout-to-restore>
@@ -629,19 +673,19 @@
           <option name="timeStamp" value="52" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/services/api.py</url>
-          <line>92</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/testing/knr_test5.py</url>
-          <line>85</line>
-          <option name="timeStamp" value="61" />
+          <line>84</line>
+          <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/testing/testKnnReg.py</url>
-          <line>292</line>
-          <option name="timeStamp" value="71" />
+          <line>149</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/services/KNNAlgorithm.py</url>
+          <line>3</line>
+          <option name="timeStamp" value="97" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -654,8 +698,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/JTSkripsiProject$testKnnReg.coverage" NAME="testKnnReg Coverage Results" MODIFIED="1557818828286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
-    <SUITE FILE_PATH="coverage/JTSkripsiProject$knr_test5.coverage" NAME="knr_test5 Coverage Results" MODIFIED="1557726131169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/JTSkripsiProject$testKnnReg.coverage" NAME="testKnnReg Coverage Results" MODIFIED="1559204816527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
+    <SUITE FILE_PATH="coverage/JTSkripsiProject$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1560729886908" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/JTSkripsiProject$knr_test5.coverage" NAME="knr_test5 Coverage Results" MODIFIED="1558519476330" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testing" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="setValue">
@@ -667,35 +712,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testing/ADHI.JKT_full.csv" />
-    <entry file="file://$PROJECT_DIR$/dataset/daily_adjusted_ADHI.JKT.csv">
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing/testKnRegressor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="85" column="74" selection-start-line="85" selection-start-column="74" selection-end-line="85" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/KNNAlgorithm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-524" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/knr_from_library.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="30" lean-forward="true" selection-end-line="10" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testing/knn_classification_regression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -734,26 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testing/testKnn3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="18" column="60" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -851,13 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/pandas/core/indexing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="2341" selection-start-line="2341" selection-end-line="2341" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/numpy/core/fromnumeric.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -914,20 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-620">
           <caret line="604" column="4" selection-start-line="604" selection-start-column="4" selection-end-line="604" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
@@ -997,23 +972,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testing/knr_test5.py">
+    <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/pandas/core/indexing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1770">
-          <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/sklearn/neighbors/regression.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="156" selection-start-line="156" selection-end-line="156" />
-          <folding>
-            <element signature="e#499#514#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="363">
+          <caret line="1477" selection-start-line="1477" selection-end-line="1477" />
         </state>
       </provider>
     </entry>
@@ -1027,29 +989,114 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/pandas/core/frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38865">
+          <caret line="2681" selection-start-line="2681" selection-end-line="2681" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/sklearn/neighbors/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5985">
-          <caret line="420" selection-start-line="420" selection-end-line="420" />
+        <state relative-caret-position="324">
+          <caret line="466" selection-start-line="466" selection-end-line="466" />
           <folding>
             <element signature="e#402#431#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/pandas/core/frame.py">
+    <entry file="file://$PROJECT_DIR$/testing/testKnRegressor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38955">
-          <caret line="2687" selection-start-line="2687" selection-end-line="2687" />
+        <state relative-caret-position="389">
+          <caret line="85" column="74" selection-start-line="85" selection-start-column="74" selection-end-line="85" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing/testKnn3.py" />
+    <entry file="file://$PROJECT_DIR$/testing/test4Json.py" />
+    <entry file="file://$PROJECT_DIR$/testing/knr_test5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="104" column="15" lean-forward="true" selection-start-line="104" selection-start-column="15" selection-end-line="104" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testing/testKnnReg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        <state relative-caret-position="586">
+          <caret line="328" column="17" selection-start-line="328" selection-start-column="17" selection-end-line="328" selection-end-column="61" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/KNNAlgorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="72" column="33" selection-start-line="72" selection-start-column="33" selection-end-line="72" selection-end-column="33" />
+          <folding>
+            <element signature="e#115#165#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib64/python3.7/site-packages/sklearn/neighbors/regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
+          <folding>
+            <element signature="e#499#514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/about.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="141" column="18" selection-start-line="141" selection-start-column="18" selection-end-line="141" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="40" column="10" lean-forward="true" selection-start-line="40" selection-start-column="10" selection-end-line="40" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="72" selection-start-line="13" selection-start-column="72" selection-end-line="13" selection-end-column="72" />
+          <folding>
+            <element signature="e#453#478#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

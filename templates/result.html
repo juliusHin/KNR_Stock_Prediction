@@ -1,13 +1,26 @@
 {% extends "index.html" %}
 {% block head %}
+    {#    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">#}
+    {#    <meta content="utf-8" http-equiv="enco ding">#}
     {% block title %}
-        Result - {{ stock.code }}
+        Result - {{ title }}
     {% endblock %}
     {{ super () }}
 
+{% endblock %}
 
-    {% block content %}
+{% block content %}
 {#        BERISI GRAFIK YANG ADA HARGANYA#}
-
-    {% endblock %}
+    <div class="row" align="center" style="width: auto; height: auto;">
+        <div class="col-md-6">
+            <div class="chart" id="stockgraph" style="max-width: 1000px">
+                {#                    <iframe id="igraph" width="900" height="600" frameborder="0" scrolling="no" src={{ data_graph }}> </iframe>#}
+                {{ data_graph }}
+                {#                    <script>#}
+                {#                        var graph = {{ plot | safe }};#}
+                {#                        Plotly.plot('stockgraph', graph, {})#}
+                {#                    </script>#}
+            </div>
+        </div>
+    </div>
 {% endblock %}
