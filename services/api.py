@@ -123,7 +123,8 @@ class API_Stock:
                     visible=True
                 ),
                 type='date'
-            )
+            ),
+            height=800
         )
 
         fig = dict(data=data_trace, layout=layout)

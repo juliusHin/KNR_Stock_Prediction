@@ -51,7 +51,7 @@
          -%}
          {% set active_page = active_page|default('index') -%}
              <a class="navbar-brand" href="/">
-                 <img src="logo/stocktrendspotter_logo.jpg" style="width:40px;">
+                 <img src="/static/stocktrendspotter_logo.jpg" style="width: 40px">
             </a>
             <!-- Links -->
             <ul id="navigation" class="navbar-nav">
@@ -71,8 +71,11 @@
       <div id="content">
          {% block content %}
          <div class="container-fluid">
-            <h3>Skripsi Project</h3>
-            <strong>Aplikasi web untuk memprediksi harga saham dengan menggunakan metode K-Nearest Neighbors</strong>
+             <div class="jumbotron">
+                 <h2>Skripsi Project</h2>
+                 <strong>Aplikasi web untuk memprediksi harga saham dengan menggunakan metode K-Nearest
+                     Neighbors</strong>
+             </div>
          </div>
          <div class="container">
             <div class="row">

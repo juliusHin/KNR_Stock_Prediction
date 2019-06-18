@@ -3,7 +3,7 @@ from plotly.offline import plot
 
 from services.api import API_Stock
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 
 @app.route('/')

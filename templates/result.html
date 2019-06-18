@@ -6,20 +6,22 @@
         Result - {{ title }}
     {% endblock %}
     {{ super () }}
-
+    <style>
+        .chart {
+            margin-top: 30px;
+            text-align: center;
+            height: 650px;
+            width: 100%;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
 {#        BERISI GRAFIK YANG ADA HARGANYA#}
-    <div class="row" align="center" style="width: auto; height: auto;">
-        <div class="col-md-6">
-            <div class="chart" id="stockgraph" style="max-width: 1000px">
-                {#                    <iframe id="igraph" width="900" height="600" frameborder="0" scrolling="no" src={{ data_graph }}> </iframe>#}
+    <div class="container-fluid" class="chart">
+        <div class="col-lg-12 col-md-9 col-md-12 col-xs-12 col-sm-9">
+            <div id="stockgraph">
                 {{ data_graph }}
-                {#                    <script>#}
-                {#                        var graph = {{ plot | safe }};#}
-                {#                        Plotly.plot('stockgraph', graph, {})#}
-                {#                    </script>#}
             </div>
         </div>
     </div>
