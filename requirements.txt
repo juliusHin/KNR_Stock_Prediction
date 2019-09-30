@@ -1,6 +1,7 @@
 alpha-vantage==2.1.0
 apm==0.0.1
 APMonitor==0.34
+Babel==2.7.0
 certifi==2018.11.29
 chardet==3.0.4
 Click==7.0
@@ -15,9 +16,12 @@ DateTime==4.3
 deap==1.2.2
 decorator==4.3.0
 Flask==1.0.2
+Flask-Babel==0.12.2
 Flask-Cache==0.13.1
 Flask-Compress==1.4.0
+Flask-Table==0.5.0
 idna==2.8
+imageio==2.5.0
 ipython-genutils==0.2.0
 itsdangerous==1.1.0
 Jinja2==2.10
@@ -27,12 +31,14 @@ kiwisolver==1.0.1
 lxml==4.3.0
 MarkupSafe==1.1.0
 matplotlib==3.0.2
+mglearn==0.1.7
 msgpack==0.6.0
 nbformat==4.4.0
 numpy==1.15.4
 optimal==0.2.0
 pandas==0.23.4
 pandas-datareader==0.7.0
+Pillow==6.1.0
 pip-tools==3.8.0
 plotly==3.5.0
 pyparsing==2.3.1

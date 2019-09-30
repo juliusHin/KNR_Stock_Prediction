@@ -79,15 +79,18 @@
          </div>
          <div class="container">
             <div class="row">
-               <div class="col-lg-4 col-lg-offset-4 col-centered">
+                <div class="col-lg-8 col-lg-offset-4 col-centered">
                   <form action="{{ url_for('handle_data') }}" method="GET">
 
                      <select name="stockList" id="stockSelect" class="col-centered col-sm-4 auto ">
                      </select>
-                     <span>
-                     <button type="submit" class="btn btn-outline-success">Submit</button>
-                     </span>
-                     {#
+                      {#                     <span>#}
+                      {#                        <input type='number' id='kvalue' name='kvalue' placeholder = "k-value" min="1" max="100">#}
+                      {#                     </span>#}
+
+                      <button type="submit" style="text-align: center;" class="btn btn-outline-success">Submit</button>
+
+                      {#
                   </form>
                   #}
                   </form>
@@ -103,7 +106,7 @@
     <footer class="footer footer-copyright" >
          {% block footer %}
          <div class="container footer-copyright text-center">
-            © 2018 Copyright:
+             © 2019 Copyright:
             <a>PrediksiSaham.com</a>
             <p>Julius Tanuwijaya - 14110110027</p>
          </div>
