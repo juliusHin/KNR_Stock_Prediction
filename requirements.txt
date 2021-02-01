@@ -57,7 +57,7 @@ sortedcontainers==2.1.0
 traitlets==4.3.2
 tushare==1.2.21
 urllib3==1.24.1
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 wrapt==1.11.0
 yahoo-fin==0.7
 zope.interface==4.6.0
