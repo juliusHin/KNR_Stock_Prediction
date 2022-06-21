@@ -34,7 +34,7 @@ matplotlib==3.0.2
 mglearn==0.1.7
 msgpack==0.6.0
 nbformat==4.4.0
-numpy==1.15.4
+numpy==1.22.0
 optimal==0.2.0
 pandas==0.23.4
 pandas-datareader==0.7.0
